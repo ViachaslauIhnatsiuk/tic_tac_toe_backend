@@ -1,3 +1,4 @@
+require('dotenv').config();
 import express from 'express';
 import http from 'http';
 import cors from 'cors';
@@ -35,6 +36,6 @@ io.on('connection', (socket: Socket) => {
   });
 });
 
-server.listen(4000, () => {
+server.listen(process.env.PORT || 4000, () => {
   console.log('Server is runnind on port 4000');
 });
